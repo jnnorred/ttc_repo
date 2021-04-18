@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     loginForm.addEventListener("submit", e => {
         e.preventDefault(); 
-
+        makeAccount();
 
         setFormMessage(loginForm, "error", "Invalid username/password combination"); 
     });
@@ -50,3 +50,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }); 
     }); 
 }); 
+
+
