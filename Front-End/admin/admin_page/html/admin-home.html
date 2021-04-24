@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/Front-End/admin/admin_page/css/admin-home.css">
 </head>
-<body>
+<body onload="populateDashboard()">
   <body id="body-pd">
     <div class="l-navbar" id="navbar">
         <nav class="nav">
@@ -22,9 +22,9 @@
                         <ion-icon name="home-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Dashboard</span>
                     </a>
-                    <a href="/Front-End/admin/admin_page/html/admin-inquries.html" class="nav__link">
-                        <ion-icon name="chatbubbles-outline" class="nav__icon"></ion-icon>
-                        <span class="nav__name">Customer Inquries</span>
+                    <a href="/Front-End/admin/admin_page/html/admin-customers.html" class="nav__link">
+                        <ion-icon name="cart-outline" class="nav__icon"></ion-icon>
+                        <span class="nav__name">Customers</span>
                     </a>
 
                     <div  class="nav__link collapse">
@@ -62,13 +62,42 @@
         </nav>
     </div>
     <div class="main">
-      <h1>Dashboard</h1>
-
+      <h1 id= "Dashboard">Dashboard</h1>
+      <div class="grid-container">
+        <div class="block Customers">
+          <h1>0</h1>
+        </div>
+        <div class="block Upcoming-Events">
+          <h1>0</h1>
+          <a href = "/Front-End/admin/admin_page/html/admin-events-upcoming.html"></a>
+        </div>
+          <div class="block Next-Event">
+            <h4>Days Until Next Event: </h4>
+            <h4>Customer Name: </h4>
+            <h4>Event Date: </h4>
+          </div>
+        <div class="block Inquries">
+          <h1>53</h1>
+        </div>
+        <div class="block Current-Menu">
+          
+        </div>
+        <div class="Extra1">
+          <h1>Extra1</h1>
+          <h1>Extra1</h1>
+        </div>
+        <div class="Extra2">
+          <h1>Extra2</h1>
+          <h1>Extra2</h1>
+        </div>
+      </div>
+    </div>
     </div>
     <!-- ===== IONICONS ===== -->
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
     
     <!-- ===== MAIN JS ===== -->
+    <script src="/Front-End/admin/admin_page/scripts/admin-home.js"></script>
     <script src="/Front-End/admin/admin_page/scripts/nav.js"></script>
 </body>
 

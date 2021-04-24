@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace api.Models
@@ -5,7 +6,7 @@ namespace api.Models
     public class Event
     {
         public int EventID { get; set; }
-        public string EventDate { get; set; }
+        public DateTime EventDate { get; set; }
         public string EventTime { get; set; }
         public double Cost { get; set; }
 

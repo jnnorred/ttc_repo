@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using api.Interfaces;
 using api.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,19 +12,27 @@ namespace api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ttcController : ControllerBase
+    public class CustomerController : ControllerBase
     {
-        // GET: api/ttc
+        // GET: api/customer
+        [EnableCors("AnotherPolicy")]
         [HttpGet]
         public List<Customer> Get()
         {
             IGetAllCustomers myObject = new ReadCustomerData();
             return myObject.GetAllCustomers(); 
-            // IGetAllEvents myObject = new ReadEventData(); 
-            // return myObject.GetAllEvents(); 
+            
+        }
+        [EnableCors("AnotherPolicy")]
+        [Route("getinquries")]
+        public List<Customer> GetInquries()
+        {
+            IGetAllCustomers myObject = new ReadCustomerData();
+            return myObject.GetCustomerInquiries(); 
+           
         }
 
-        // GET: api/ttc/5
+        [EnableCors("AnotherPolicy")]
         [HttpGet("{id}", Name = "Get")]
         public Customer Get(int id)
         {
@@ -32,18 +41,21 @@ namespace api.Controllers
         }
 
         // POST: api/ttc
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
         // PUT: api/ttc/5
+        [EnableCors("AnotherPolicy")]
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
         // DELETE: api/ttc/5
+        [EnableCors("AnotherPolicy")]
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

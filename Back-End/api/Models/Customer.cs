@@ -8,6 +8,8 @@ namespace api.Models
         public string LName {get; set;}
         public string Company {get; set;}
         public string Phone {get; set;}
+        public int TimeDifference {get; set;}
         public Event Event {get; set;}
+        public CustomerMessage Message{get; set;}
     }
 }
