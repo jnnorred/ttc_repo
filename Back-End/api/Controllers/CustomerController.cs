@@ -31,6 +31,22 @@ namespace api.Controllers
             return myObject.GetCustomerInquiries(); 
            
         }
+        [EnableCors("AnotherPolicy")]
+        [Route("getbalance")]
+        public List<Customer> GetBalance()
+        {
+            IGetAllCustomers myObject = new ReadCustomerData();
+            return myObject.GetCustomerDueAmount(); 
+           
+        }
+        [EnableCors("AnotherPolicy")]
+        [Route("getinvoices/{id}")]
+        public Customer GetInvoices(int id)
+        {
+            IGetCustomer myObject = new ReadCustomerData();
+            return myObject.GetCustomerInvoices(id); 
+           
+        }
 
         [EnableCors("AnotherPolicy")]
         [HttpGet("{id}", Name = "Get")]

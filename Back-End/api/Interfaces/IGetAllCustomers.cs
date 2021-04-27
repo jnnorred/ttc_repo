@@ -8,5 +8,7 @@ namespace api.Interfaces
          List<Customer> GetAllCustomers();
 
          List<Customer> GetCustomerInquiries(); 
+
+         List<Customer> GetCustomerDueAmount(); 
     }
 }

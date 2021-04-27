@@ -26,16 +26,18 @@ namespace api.Models
             while (rdr.Read())
             {
                 allEvent.Add(new Event(){EventID = rdr.GetInt32(0),
-                    EventDate = rdr.GetDateTime(1),
-                    EventTime = rdr.GetString(2),
-                    Cost = rdr.GetDouble(3),
+                    EventName = rdr.GetString(1),
+                    EventDate = rdr.GetDateTime(2),
+                    EventTime = rdr.GetString(3),
+                    Cost = rdr.GetDouble(4),
                     Customer = new Customer(){
-                    CustID = rdr.GetInt32(5),
-                    AccountNo = rdr.GetString(6), 
-                    FName = rdr.GetString(7),
-                    LName = rdr.GetString(8),
-                    Company = rdr.GetString(9),
-                    Phone = rdr.GetString(10)}});
+                    CustID = rdr.GetInt32(6),
+                    AccountNo = rdr.GetString(7), 
+                    FName = rdr.GetString(8),
+                    LName = rdr.GetString(9),
+                    Company = rdr.GetString(10),
+                    Phone = rdr.GetString(11),
+                    Email = rdr.GetString(12)}});
 
             }
             return allEvent; 
@@ -60,9 +62,10 @@ namespace api.Models
             while (rdr.Read())
             {
                 allEvent.Add(new Event(){EventID = rdr.GetInt32(0),
-                    EventDate = rdr.GetDateTime(1),
-                    EventTime = rdr.GetString(2),
-                    Cost = rdr.GetDouble(3)});
+                    EventName = rdr.GetString(1),
+                    EventDate = rdr.GetDateTime(2),
+                    EventTime = rdr.GetString(3),
+                    Cost = rdr.GetDouble(4)});
 
             }
             return allEvent; 
@@ -83,16 +86,18 @@ namespace api.Models
 
             rdr.Read(); 
             return new Event(){EventID = rdr.GetInt32(0),
-                    EventDate = rdr.GetDateTime(1),
-                    EventTime = rdr.GetString(2),
-                    Cost = rdr.GetDouble(3),
+                    EventName = rdr.GetString(1),
+                    EventDate = rdr.GetDateTime(2),
+                    EventTime = rdr.GetString(3),
+                    Cost = rdr.GetDouble(4),
                 Customer = new Customer(){
-                    CustID = rdr.GetInt32(5),
-                    AccountNo = rdr.GetString(6), 
-                    FName = rdr.GetString(7),
-                    LName = rdr.GetString(8),
-                    Company = rdr.GetString(9),
-                    Phone = rdr.GetString(10)}};
+                    CustID = rdr.GetInt32(6),
+                    AccountNo = rdr.GetString(7), 
+                    FName = rdr.GetString(8),
+                    LName = rdr.GetString(9),
+                    Company = rdr.GetString(10),
+                    Phone = rdr.GetString(11),
+                    Email = rdr.GetString(12)}};
         }
 
         public Event NextEvent()
