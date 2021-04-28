@@ -27,6 +27,24 @@ namespace api.Models
             }
         }
 
+        public void InsertMessage(CustomerMessage value)
+        {
+            DBConnection db = new DBConnection(); 
+            bool isOpen = db.OpenConnection(); 
+            if (isOpen)
+            {
+                MySqlConnection conn = db.GetConn(); 
+                string stm = @"INSERT INTO customer_message(Cust_ID, message) VALUES(@Cust_ID, @message)"; 
+                MySqlCommand cmd = new MySqlCommand(stm, conn); 
+                
+                cmd.Parameters.AddWithValue("@Cust_ID", value.CustID);
+                cmd.Parameters.AddWithValue("@message", value.Message);
+                cmd.Prepare(); 
+                cmd.ExecuteNonQuery(); 
+                db.CloseConnection(); 
+            }
+        }
+
         public void UpdateCustomer(int id, Customer value)
         {
             throw new System.NotImplementedException();

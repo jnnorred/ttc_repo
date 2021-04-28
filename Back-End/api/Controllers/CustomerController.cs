@@ -63,7 +63,13 @@ namespace api.Controllers
         {
             IInsertCustomer insertObject = new SaveCustomer(); 
             insertObject.InsertCustomer(value);
-
+        }
+        [EnableCors("AnotherPolicy")]
+        [Route("postmessage")]
+        public void PostMessage([FromBody] CustomerMessage value)
+        {
+            IInsertCustomer insertObject = new SaveCustomer(); 
+            insertObject.InsertMessage(value);
         }
 
         // PUT: api/ttc/5
