@@ -13,7 +13,7 @@ namespace api.Models
             bool isOpen = db.OpenConnection(); 
             if (isOpen){
                 MySqlConnection conn = db.GetConn(); 
-                string stm = "SELECT * FROM customer LEFT JOIN event ON customer.Cust_ID = event.Cust_ID GROUP BY customer.Cust_ID";
+                string stm = "SELECT * FROM customer";
                 MySqlCommand cmd = new MySqlCommand(stm, conn); 
                 List<Customer> allCustomers = new List<Customer>(); 
                 List<Event> allEvent = new List<Event>(); 
@@ -22,8 +22,7 @@ namespace api.Models
                 {
                     while (rdr.Read())
                     {
-                        allCustomers.Add(new Customer(){CustID=rdr.GetInt32(0), AccountNo = rdr.GetString(1), FName = rdr.GetString(2), LName = rdr.GetString(3), Company = rdr.GetString(4), Phone = rdr.GetString(5), Email = rdr.GetString(6), Event = new Event(){EventID = rdr.GetInt32(7), EventName = rdr.GetString(8), EventDate = rdr.GetDateTime(9), EventTime = rdr.GetString(10), Cost = rdr.GetDouble(11)}}); 
-
+                        allCustomers.Add(new Customer(){CustID=rdr.GetInt32(0), AccountNo = rdr.GetString(1), FName = rdr.GetString(2), LName = rdr.GetString(3), Company = rdr.GetString(4), Phone = rdr.GetString(5), Email = rdr.GetString(6)}); 
                     }
                    
                 }
