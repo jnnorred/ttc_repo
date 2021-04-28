@@ -49,6 +49,19 @@ document.addEventListener("DOMContentLoaded", () => {
             clearInputError(inputElement); 
         }); 
     }); 
+    document.getElementsByClassName("form__button").addEventListener("click", checkPassword());
 }); 
+function checkPassword(){
+    const username = Document.getElementById().value;
+    const password = Document.getElementById().value;
+    if (username == 'admin' && password == 'password') {
+        var url = "Front-End\admin\admin_page\html\admin-home.html";
+        window.location = url; 
+      }
+      else
+      {
+        setFormMessage(loginForm, "error", "Invalid username/password combination");
+      }
+}
 
 
