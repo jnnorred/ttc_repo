@@ -63,7 +63,6 @@ namespace api.Controllers
         {
             IInsertCustomer insertObject = new SaveCustomer(); 
             insertObject.InsertCustomer(value);
-
         }
 
         // PUT: api/ttc/5

@@ -6,5 +6,6 @@ namespace api.Interfaces
     {
          public void InsertCustomer(Customer value);
          public void UpdateCustomer(int id, Customer value);
+         public void InsertMessage(CustomerMessage value); 
     }
 }
