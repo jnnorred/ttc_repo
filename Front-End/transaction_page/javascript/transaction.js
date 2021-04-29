@@ -2,9 +2,12 @@
 //function getTransaction()
 //{
     
-    //const allPostsApiUrl = "https://localhost:5001/api/customer/gettransactions/";
+    //const transactionApiUrl = "https://localhost:5001/api/customer/gettransactions/";
+    //const adminId = document.getElementById("")
     //fetch(allPostsApiUrl).then(function(response)
     //{
+       // return response.json();
+    //}).then(function(json))
 
     //}
 //}
