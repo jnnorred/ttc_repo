@@ -5,7 +5,7 @@ function makeCustomer(){
     const CustCompany = document.getElementById("company").value;
     const CustEmail = document.getElementById("email").value;
     const CustPhone = document.getElementById("phone").value;
-    const CustPhone = document.getElementById("message").value;
+    const CustMessage = document.getElementById("message").value;
 
     
     fetch(allCustomersApiUrl, {
@@ -19,11 +19,13 @@ function makeCustomer(){
             lName: CustLName,
             company: CustCompany,
             phone: CustPhone,
-            email: CustEmail
+            email: CustEmail,
+            message: {
+                message:CustMessage
+            }
         })
     }).then((response) =>{
         console.log(response); 
         document.forms['new-customer'].reset();
     })
 }
-function customer()
