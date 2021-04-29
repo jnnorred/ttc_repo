@@ -10,19 +10,30 @@ namespace api.Models
         {
             DBConnection db = new DBConnection(); 
             bool isOpen = db.OpenConnection(); 
+            MySqlConnection conn = db.GetConn(); 
+            string stm1 = @"INSERT INTO customer(FName, LName, Company, Phone, Email) VALUES(@FName, @LName, @Company, @Phone, @Email)"; 
+            string stm2 = @"INSERT INTO customer_message (Cust_ID, message) VALUES (LAST_INSERT_ID(), @Message)"; 
             if (isOpen)
             {
-                MySqlConnection conn = db.GetConn(); 
-                string stm = @"INSERT INTO customer(FName, LName, Company, Phone, Email) VALUES(@FName, @LName, @Company, @Phone, @Email)"; 
-                MySqlCommand cmd = new MySqlCommand(stm, conn); 
-                
-                cmd.Parameters.AddWithValue("@FName", value.FName);
-                cmd.Parameters.AddWithValue("@LName", value.LName);
-                cmd.Parameters.AddWithValue("@Company", value.Company);
-                cmd.Parameters.AddWithValue("@Phone", value.Phone);
-                cmd.Parameters.AddWithValue("@Email", value.Email);
-                cmd.Prepare(); 
-                cmd.ExecuteNonQuery(); 
+                using (MySqlCommand cmd1 = new MySqlCommand(stm1, conn))
+                {
+                    cmd1.Parameters.AddWithValue("@FName", value.FName);
+                    cmd1.Parameters.AddWithValue("@LName", value.LName);
+                    cmd1.Parameters.AddWithValue("@Company", value.Company);
+                    cmd1.Parameters.AddWithValue("@Phone", value.Phone);
+                    cmd1.Parameters.AddWithValue("@Email", value.Email);
+                    cmd1.Prepare(); 
+                    cmd1.ExecuteNonQuery(); 
+                }
+                if (value.Message.Message != null)
+                {
+                    using (MySqlCommand cmd2 = new MySqlCommand(stm2, conn))
+                    {
+                        cmd2.Parameters.AddWithValue("@message", value.Message.Message);
+                        cmd2.Prepare(); 
+                        cmd2.ExecuteNonQuery(); 
+                    }
+                }
                 db.CloseConnection(); 
             }
         }
