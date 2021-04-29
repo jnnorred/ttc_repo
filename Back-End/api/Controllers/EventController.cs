@@ -53,8 +53,10 @@ namespace api.Controllers
         // POST: api/ttc
         [EnableCors("AnotherPolicy")]
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Event value)
         {
+            IInsertEvent myObject = new SaveEvent(); 
+            myObject.InsertEvent(value); 
         }
 
         // PUT: api/ttc/5
