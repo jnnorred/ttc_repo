@@ -1,5 +1,6 @@
 function populateDashboard(){
     getCustomers(); 
+    getUpcoming(); 
 }
 
 function getCustomers(){
@@ -118,7 +119,26 @@ function getUpcoming(){
       return response.json(); 
   }).then(function (json) {
       console.log(json);
-      upcomingEvents = json; 
-      populateEventCount();
+      eventUpcoming = json; 
+      populateEventUpcoming();
   })
+}
+
+
+function populateEventUpcoming(){
+  let html = '<div class = upcomingEvents>';0 
+    eventUpcoming.forEach(upcoming => {
+        html += '<div class = float-container>';
+        html += '<div class = "float-child name">';
+        html += '<h3>Event Name:  '+ upcoming.eventName +'</h3>'; 
+        html += `<h5> Estimated Charge: ${upcoming.cost}</h5>`;
+        html += '</div>';
+        html += '<div class = "float-child Amount">';
+        var date = upcoming.eventDate; 
+        html += `<h3>${date.toLocaleString("en-US")}</h3>`;
+        html += '</div>';1
+        html += '</div>';
+    });
+    html += '</div>';
+    document.querySelector('.Upcoming-Events').innerHTML = html;
 }

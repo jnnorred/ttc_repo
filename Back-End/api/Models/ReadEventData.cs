@@ -51,7 +51,7 @@ namespace api.Models
             con.Open(); 
 
 
-            string stm = "SELECT * FROM event WHERE DATEDIFF(Event_Date, NOW()) >= 1";
+            string stm = "SELECT * FROM event WHERE DATEDIFF(Event_Date, NOW()) >= 1 ORDER BY Event_Date DESC";
             using var cmd = new MySqlCommand(stm,con); 
 
             using MySqlDataReader rdr = cmd.ExecuteReader();
