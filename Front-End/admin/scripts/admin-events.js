@@ -57,7 +57,7 @@ function openNewEvent(id) {
     document.querySelector('.Add-Event').classList.add('expand');
     customers.forEach(customer => {
         if (customer.custID == id) {
-            document.getElementById('.pre-filled').style.display = 'block';
+            document.getElementById('pre-filled').style.display = 'block';
             document.getElementById('search').value = `${customer.fName} ${customer.lName}`; 
             searchWrapper.classList.remove('show'); 
             let html = `<span><h5>Customer Name:&emsp;${customer.fName} ${customer.lName}</h5></span>`; 
@@ -106,7 +106,19 @@ function postEvent(id) {
         document.getElementById('event-form').style.display = 'none'; 
         document.querySelector('.Add-Event').classList.remove('expand');
         document.getElementById('search').value = ``; 
-        document.getElementById('.pre-filled').style.display = 'none';
+        document.getElementById('pre-filled').style.display = 'none';
         1
     })
+}
+
+function getUpcoming(){
+  const getUpcomingEventsUrl = "https://titletowncateringapi.herokuapp.com/api/event/getupcoming";
+  fetch(getUpcomingEventsUrl).then(function(response){
+      console.log(response); 
+      return response.json(); 
+  }).then(function (json) {
+      console.log(json);
+      upcomingEvents = json; 
+      populateEventCount();
+  })
 }

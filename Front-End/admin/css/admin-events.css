@@ -236,47 +236,44 @@ button i {
   background: #ececec
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
-  width: fit-content;
-}
+
 .Upcoming-Events {
-   grid-area: 1 / 1 / 2 / 5; 
-   background-color: var(--earth-yellow);
-   min-height: 300px;
-   margin-left: 3%;
-   margin-top: 30px;
-   margin-bottom: 50px;
+  margin-top: 50px;
+  width: 85%;
+  height: 80%;
+  margin-left: 50px;
+  font-size: 25px;
+  text-align: left;
+  padding: 10px 30px;
+  box-shadow: 0px 2px 10px 2px rgba(0,0,0,0.20);
+  color: var(--bg-color); 
+  transition: all .1s ease-in-out;
+  text-decoration: none;
+  border-radius: 10px;
    
 }
-.Next-Month { grid-area: 1 / 1 / 2 / 3; }
-.Next-SixMonths { grid-area: 1 / 3 / 2 / 5; }
 .Add-Event { 
+  display: inline-flex;
+  width: fit-content;
   margin-left: 3%;
-  background-color: var(--bg-color);
-  display: grid;
-  grid-template-columns: 1.7fr 0.3fr;
-  grid-template-rows: 0.6fr 1fr 1.4fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "customer-search Add-Button"
-    "auto-filled auto-filled"
-    "required-info required-info";
-  grid-area: 2 / 1 / 4 / 3;
+  background-color: var(--first-color);
   border-radius: 10px;
   max-height: 80px;
   
 }
-.Add-Event .auto-filled .required-info{
-  display: none;
-  
-  
-}
+
 .Add-Event.expand{
   max-height: 100%;
+}
+.Add-Event h1{
+  padding-left: 4%;
+  padding-top: 10px;
+  color: white;
+  transition: 0.3s ease;
+  font-family: 'Open-Sans', sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  
 }
 .Add-Event h5{
   margin-left: 4%;
@@ -306,15 +303,14 @@ button i {
   transform: rotate(180deg);
 }
 .customer-search {
-  grid-area: customer-search;
   margin: 10px;
   position: relative;
    vertical-align: bottom;
   
 }
 .auto-filled { 
+  /* display: block; */
   font-size: 13px;
-  grid-area: auto-filled; 
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
   /* top: 50%; */
@@ -327,12 +323,11 @@ button i {
   padding: 4px;
   background: #ffffff;
   border-radius: 5px;
-  box-shadow: 2px 5px 5px 6px rgba(0,0,0,0.40);
+  box-shadow: 2px 5px 5px 6px rgba(0,0,0,0.10);
   position: relative;
   width: fit-content;
   min-width: 500px;
   vertical-align: middle;
-
 }
 .required-info { 
   grid-area: required-info;
@@ -353,21 +348,3 @@ button i {
   font-size: 15px;
 }
 /* add event content */
-
-
-
-.Event-Revenue { grid-area: 2 / 3 / 4 / 5; }
-.Current-Revenue { grid-area: 2 / 3 / 3 / 5; }
-.Upcoming-Revenue { grid-area: 3 / 3 / 4 / 5; }
-
-#Events-Header{
-  margin-left: 5%;
-  margin-right: 5%;
-  color: #FFF;
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: 300;
-  background-color: var(--first-color);
-  padding: 20px;
-  box-shadow: 0px 2px 10px 2px rgba(0,0,0,0.20);
-  border-radius: 10px;
-}
