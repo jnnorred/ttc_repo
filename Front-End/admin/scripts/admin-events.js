@@ -134,9 +134,7 @@ function populateEventUpcoming(){
         html += `<h5> Estimated Charge: ${upcoming.cost}</h5>`;
         html += '</div>';
         html += '<div class = "float-child Amount">';
-        var date = upcoming.eventDate; 
-        html += `<h3>${date.toLocaleString("en-US")}</h3>`;
-        html += '</div>';1
+        html += '</div>';
         html += '</div>';
     });
     html += '</div>';
