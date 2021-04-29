@@ -36,3 +36,7 @@ const showMenu = (toggleId, navbarId, bodyId)=>{
       rotate.classList.toggle('rotate')
     })
   }
+  function logout() {
+    var url = "https://titletowncatering-home.herokuapp.com/index.html"; //change to home page
+        window.location.href = url, true; 
+}

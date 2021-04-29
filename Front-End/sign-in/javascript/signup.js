@@ -3,7 +3,7 @@ function checkPassword(){
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     if (username.toUpperCase() === 'ADMIN' && password.toUpperCase() === 'PASSWORD') {
-        var url = "http://www.google.com/"; //change to admin page
+        var url = "https://titletowncatering-admin.herokuapp.com/index.html"; //change to admin page
         window.location.href = url, true; 
         alert("successful");
     }
