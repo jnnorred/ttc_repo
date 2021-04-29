@@ -12,7 +12,7 @@ function countCustomers(){
 }
 
 function getCustomers(){
-    const allPostsApiUrl = "https://localhost:5001/api/customer";
+    const allCustomersApiUrl = "https://titletowncateringapi.herokuapp.com/api/customer";
     fetch(allPostsApiUrl).then(function(response){
         console.log(response); 
         return response.json(); 
@@ -25,8 +25,8 @@ function getCustomers(){
 
 
 function getUpcoming(){
-    const allPostsApiUrl = "https://localhost:5001/api/event/getupcoming";
-    fetch(allPostsApiUrl).then(function(response){
+    const getUpcomingEventsUrl = "https://titletowncateringapi.herokuapp.com/api/event/getupcoming";
+    fetch(getUpcomingEventsUrl).then(function(response){
         console.log(response); 
         return response.json(); 
     }).then(function (json) {
@@ -43,7 +43,7 @@ function populateEventCount(){
 }
 
 function getNext(){
-    const allPostsApiUrl = "https://localhost:5001/api/event/getnext";
+    const getNexEventUrl = "https://titletowncateringapi.herokuapp.com/api/event/getnext"; 
     fetch(allPostsApiUrl).then(function(response){
         console.log(response); 
         return response.json(); 
@@ -60,8 +60,8 @@ function populateNextEvent(){
     document.querySelector('.Next-Event').innerHTML = html; 
 }
 function getInquries(){
-    const allPostsApiUrl = "https://localhost:5001/api/customer/getinquries";
-    fetch(allPostsApiUrl).then(function(response){
+    const getCustomerInquriesUrl = "https://titletowncateringapi.herokuapp.com/api/customer/getinquries"; 
+    fetch(getCustomerInquriesUrl).then(function(response){
         console.log(response); 
         return response.json(); 
     }).then(function (json) {

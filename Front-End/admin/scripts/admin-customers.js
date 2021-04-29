@@ -5,8 +5,8 @@ function populateDashboard(){
 }
 
 function getInvoices(id){
-    const allPostsApiUrl = "https://localhost:5001/api/customer/getinvoices/"+id;
-    fetch(allPostsApiUrl).then(function(response){
+    const allCustomersApiUrl = "https://titletowncateringapi.herokuapp.com/api/customer/getinvoices/"+id;
+    fetch(allCustomersApiUrl).then(function(response){
         console.log(response); 
         return response.json(); 
     }).then(function (json) {
@@ -76,7 +76,7 @@ function amountDue(){
 }
 
 function getBalance(){
-    const allCustomerApiUrl = "https://localhost:5001/api/customer/getbalance";
+    const allCustomerApiUrl = "https://titletowncateringapi.herokuapp.com/api/customer/getbalance";
     fetch(allCustomerApiUrl).then(function(response){
         console.log(response); 
         return response.json(); 
@@ -89,7 +89,7 @@ function getBalance(){
 
 //Make New Customer Method
 function makeCustomer(){
-    const allCustomersApiUrl = "https://localhost:5001/api/customer";
+    const makeCustomerApiUrl = "https://titletowncateringapi.herokuapp.com/api/customer";
     const CustFName = document.getElementById("FirstName").value;
     const CustLName = document.getElementById("LastName").value;
     const CustCompany = document.getElementById("Company").value;
@@ -97,7 +97,7 @@ function makeCustomer(){
     const CustEmail = document.getElementById("Email").value;
     
     
-    fetch(allCustomersApiUrl, {
+    fetch(makeCustomerApiUrl, {
         method: "POST",
         headers: {
             "Accept": 'application/json',
@@ -120,7 +120,7 @@ function makeCustomer(){
 
 //Send Customer Invoices by Email
 function getInvoiceInfo(id){
-    const customerApiUrl = "https://localhost:5001/api/event/getinvoice/"+id; 
+    const customerApiUrl = "https://titletowncateringapi.herokuapp.com/api/getinvoice/"+id;
     fetch(customerApiUrl).then(function(response){
         console.log(response); 
         return response.json(); 
@@ -146,8 +146,8 @@ function sendEmail(){
 
 //Get Customer Inquries
 function getCustomerInquries() {
-    const allPostsApiUrl = "https://localhost:5001/api/customer/getinquries";
-    fetch(allPostsApiUrl).then(function(response){
+    const allCustomersApiUrl = "https://titletowncateringapi.herokuapp.com/api/customer/getinquries"; 
+    fetch(allCustomersApiUrl).then(function(response){
         console.log(response); 
         return response.json(); 
     }).then(function (json) {

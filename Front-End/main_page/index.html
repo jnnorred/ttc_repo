@@ -2,6 +2,7 @@
 <html lang="en">
 <meta charset="UTF-8">
 <title>Catering</title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">  
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -119,18 +120,19 @@
     <b>Title Town Catering, University Bld, Tuscaloosa, AL</b></p>
     <p>Call 255-754-2102 or email blackpeople@gmail.com, or send us a message here:</p>
 
-    <form action="/action_page.php" target="_blank">
-    <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-    <p><input class="w3-input w3-padding-16" type="text" placeholder="Company" required name="Company"></p>
-    <p><input class="w3-input w3-padding-16" type="number" placeholder="Email" required name="Email"></p>
-    <p><input class="w3-input w3-padding-16" type="number" placeholder="Phone Number" required name="Phone Number"></p>
-    <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
-    <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
+    <form name= "new-customer" onsubmit="return false" target="_blank">
+    <p><input class="w3-input w3-padding-16" type="text" placeholder="FName" required name="FName" id="fName"></p>
+    <p><input class="w3-input w3-padding-16" type="text" placeholder="LName" required name="LName" id="lName"></p>
+    <p><input class="w3-input w3-padding-16" type="text" placeholder="Company" required name="Company" id="company"></p>
+    <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email" id="email"></p>
+    <p><input class="w3-input w3-padding-16" type="text" placeholder="Phone Number" required name="Phone Number" id="phone"></p>
+    <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message" id="message"></p>
+    <p><button class="w3-button w3-light-grey w3-section" type="submit" onsubmit="makeCustomer()">SEND MESSAGE</button></p>
     </form>
 
 <div class="img-container"> <!-- Block parent element -->
-      <img src="/Front-End/media_resources/companylogo.jpg" class = "w3-image" style="width:33%"
-    </div>
+      <img src="/Front-End/media_resources/companylogo.jpg" class = "w3-image" style="width:33%">
+</div>
   <!-- footer-->
 <footer>
   <p>Author: Hege Refsnes<br>
